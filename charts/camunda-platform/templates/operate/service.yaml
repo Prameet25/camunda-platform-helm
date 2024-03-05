@@ -6,6 +6,7 @@ metadata:
   labels:
     {{- include "operate.labels" . | nindent 4 }}
   annotations:
+    service.beta.kubernetes.io/azure-load-balancer-internal: "true"
     {{- if .Values.global.annotations}}
       {{- toYaml .Values.global.annotations | nindent 4 }}
     {{- end }}
